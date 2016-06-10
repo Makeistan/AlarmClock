@@ -55,8 +55,22 @@ int f7=8;
 
 int buzzer=9;
 
+int hh=0;
+int mm=0;
+int ss=0;
+
+int h1=0;
+int h2=0;
+int m1=0;
+int m2=0;
+int s1=0;
+int s2=0;
+
+
 void setup()
 {
+  Serial.begin(9600);
+  
 //  pinMode(a1,OUTPUT);
   pinMode(a2,OUTPUT);
   pinMode(a3,OUTPUT);
@@ -112,6 +126,7 @@ void setup()
 
 void loop()
 {
+  
   //please do something!
   for (int i=0;i<12;i++)
   {
@@ -129,6 +144,45 @@ void loop()
       }
     }
   }
+
+  /*
+  hh=Serial.read();
+  mm=Serial.read();
+  ss=Serial.read();
+  
+  while(hh<=12)
+  {
+    displayNumberA(hh/10);
+    displayNumberB(hh%10);
+    while (mm<=60)
+    {
+      displayNumberC(mm/10);
+      displayNumberD(mm%10);
+      mm++;
+      while(ss<=60)
+      {
+        displayNumberE(ss/10);
+        displayNumberF(ss%10);
+        ss++;
+        delay(1000);
+        if (ss==60)
+        {
+          ss=0;
+        }
+      }
+      mm++;
+      if (mm==60)
+      {
+        mm=0;
+      }
+    }
+    hh++;
+    if (hh==12)
+    {
+      hh=0;
+    }
+    
+  }*/
 }
 
 void displayNumberA(int number)
