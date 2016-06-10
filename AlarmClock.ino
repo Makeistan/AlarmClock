@@ -143,7 +143,7 @@ void loop()
     }
   }
 
-  
+  /*
   hh=Serial.read();
   mm=Serial.read();
   ss=Serial.read();
@@ -191,7 +191,7 @@ void loop()
       hh=0;
     }
     
-  }
+  }*/
 }
 
 void displayNumberA(int number)
