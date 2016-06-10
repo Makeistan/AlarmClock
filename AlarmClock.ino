@@ -6,18 +6,12 @@ The Sketch is a simple 7-Segment-LED driver using Arduino MEGA with direct addre
 Since it is targeted for noobs, direct addressing is accompnied to avoid multiplexing logic. ICs for multiplexing can be used with UNO but it makes the circuit too complex.
 Additional feature of this code is to make use of displaying digits on 7-Segment-LED display. So we will add a buzzer and timing mechanism to make Alarm Clock out of it.
 
-Prepared
 Specially prepared for Arduino Nights at Make-i-stan (Pakistan's first and only Makerspace).
 For more details, visit www.Make-i-stan.co or www.Facebook.com/Makeistan or www.Twitter.com/Makeistan
 */
 
-int a1=2;
-int a2=3;
-int a3=4;
-int a4=5;
-int a5=6;
-int a6=7;
-int a7=8;
+int a2=10;
+int a3=11;
 
 int b1=22;
 int b2=24;
@@ -43,23 +37,33 @@ int d5=39;
 int d6=41;
 int d7=43;
 
+int e1=45;
+int e2=47;
+int e3=49;
+int e4=51;
+int e5=53;
+int e6=50;
+int e7=52;
+
+int f1=2;
+int f2=3;
+int f3=4;
+int f4=5;
+int f5=6;
+int f6=7;
+int f7=8;
+
 int buzzer=9;
-
-
-int hh=0;
-int mm=0;
-int ss=0;
-
 
 void setup()
 {
-  pinMode(a1,OUTPUT);
+//  pinMode(a1,OUTPUT);
   pinMode(a2,OUTPUT);
   pinMode(a3,OUTPUT);
-  pinMode(a4,OUTPUT);
-  pinMode(a5,OUTPUT);
-  pinMode(a6,OUTPUT);
-  pinMode(a7,OUTPUT);
+//  pinMode(a4,OUTPUT);
+//  pinMode(a5,OUTPUT);
+//  pinMode(a6,OUTPUT);
+//  pinMode(a7,OUTPUT);
 
   pinMode(b1,OUTPUT);
   pinMode(b2,OUTPUT);
@@ -85,6 +89,22 @@ void setup()
   pinMode(d6,OUTPUT);
   pinMode(d7,OUTPUT);
 
+  pinMode(e1,OUTPUT);
+  pinMode(e2,OUTPUT);
+  pinMode(e3,OUTPUT);
+  pinMode(e4,OUTPUT);
+  pinMode(e5,OUTPUT);
+  pinMode(e6,OUTPUT);
+  pinMode(e7,OUTPUT);
+
+  pinMode(f1,OUTPUT);
+  pinMode(f2,OUTPUT);
+  pinMode(f3,OUTPUT);
+  pinMode(f4,OUTPUT);
+  pinMode(f5,OUTPUT);
+  pinMode(f6,OUTPUT);
+  pinMode(f7,OUTPUT);
+
   pinMode(buzzer,OUTPUT);
   
 
@@ -93,20 +113,37 @@ void setup()
 void loop()
 {
   //please do something!
+  for (int i=0;i<12;i++)
+  {
+    displayNumberA(i/10);
+    displayNumberB(i%10);
+    for (int j=0;j<60;j++)
+    {
+      displayNumberC(j/10);
+      displayNumberD(j%10);
+      for (int k=0;k<60;k++)
+      {
+        displayNumberE(k/10);
+        displayNumberF(k%10);
+        delay(1000);
+      }
+    }
+  }
 }
 
 void displayNumberA(int number)
 {
-  digitalWrite(a1,LOW);
+//  digitalWrite(a1,LOW);
   digitalWrite(a2,LOW);
   digitalWrite(a3,LOW);
-  digitalWrite(a4,LOW);
-  digitalWrite(a5,LOW);
-  digitalWrite(a6,LOW);
-  digitalWrite(a7,LOW);
+//  digitalWrite(a4,LOW);
+//  digitalWrite(a5,LOW);
+//  digitalWrite(a6,LOW);
+//  digitalWrite(a7,LOW);
   
   if (number==0)
   {
+    /*
     digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -114,6 +151,7 @@ void displayNumberA(int number)
     digitalWrite(a5,HIGH);
     digitalWrite(a6,HIGH);
     //digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==1)
@@ -129,6 +167,7 @@ void displayNumberA(int number)
   
   if (number==2)
   {
+    /*
     digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
 //    digitalWrite(a3,HIGH);
@@ -136,10 +175,12 @@ void displayNumberA(int number)
     digitalWrite(a5,HIGH);
 //    digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==3)
   {
+    /*
     digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -147,10 +188,12 @@ void displayNumberA(int number)
 //    digitalWrite(a5,HIGH);
 //    digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==4)
   {
+    /*
 //    digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -158,10 +201,12 @@ void displayNumberA(int number)
 //    digitalWrite(a5,HIGH);
     digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==5)
   {
+    /*
     digitalWrite(a1,HIGH);
 //    digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -169,10 +214,12 @@ void displayNumberA(int number)
 //    digitalWrite(a5,HIGH);
     digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==6)
   {
+    /*
     digitalWrite(a1,HIGH);
 //    digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -180,10 +227,12 @@ void displayNumberA(int number)
     digitalWrite(a5,HIGH);
     digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==7)
   {
+    /*
     digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -191,10 +240,12 @@ void displayNumberA(int number)
 //    digitalWrite(a5,HIGH);
 //    digitalWrite(a6,HIGH);
 //    digitalWrite(a7,HIGH);
+*/
   }
   
   if (number==8)
   {
+    /*
     digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -202,10 +253,12 @@ void displayNumberA(int number)
     digitalWrite(a5,HIGH);
     digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
   if (number==9)
   {
+    /*
     digitalWrite(a1,HIGH);
     digitalWrite(a2,HIGH);
     digitalWrite(a3,HIGH);
@@ -213,6 +266,7 @@ void displayNumberA(int number)
 //    digitalWrite(a5,HIGH);
     digitalWrite(a6,HIGH);
     digitalWrite(a7,HIGH);
+    */
   }
   
 }
@@ -593,6 +647,253 @@ void displayNumberD(int number)
 }
 
 
+void displayNumberE(int number)
+{
+  digitalWrite(e1,LOW);
+  digitalWrite(e2,LOW);
+  digitalWrite(e3,LOW);
+  digitalWrite(e4,LOW);
+  digitalWrite(e5,LOW);
+  digitalWrite(e6,LOW);
+  digitalWrite(e7,LOW);
+  
+  if (number==0)
+  {
+    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+    digitalWrite(e5,HIGH);
+    digitalWrite(e6,HIGH);
+    //digitalWrite(e7,HIGH);
+  }
+  
+  if (number==1)
+  {
+//    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+//    digitalWrite(e4,HIGH);
+//    digitalWrite(e5,HIGH);
+//    digitalWrite(e6,HIGH);
+//    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==2)
+  {
+    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+//    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+    digitalWrite(e5,HIGH);
+//    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==3)
+  {
+    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+//    digitalWrite(e5,HIGH);
+//    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==4)
+  {
+//    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+//    digitalWrite(e4,HIGH);
+//    digitalWrite(e5,HIGH);
+    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==5)
+  {
+    digitalWrite(e1,HIGH);
+//    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+//    digitalWrite(e5,HIGH);
+    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==6)
+  {
+    digitalWrite(e1,HIGH);
+//    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+    digitalWrite(e5,HIGH);
+    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==7)
+  {
+    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+//    digitalWrite(e4,HIGH);
+//    digitalWrite(e5,HIGH);
+//    digitalWrite(e6,HIGH);
+//    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==8)
+  {
+    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+    digitalWrite(e5,HIGH);
+    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+  if (number==9)
+  {
+    digitalWrite(e1,HIGH);
+    digitalWrite(e2,HIGH);
+    digitalWrite(e3,HIGH);
+    digitalWrite(e4,HIGH);
+//    digitalWrite(e5,HIGH);
+    digitalWrite(e6,HIGH);
+    digitalWrite(e7,HIGH);
+  }
+  
+}
+
+
+
+
+void displayNumberF(int number)
+{
+  digitalWrite(f1,LOW);
+  digitalWrite(f2,LOW);
+  digitalWrite(f3,LOW);
+  digitalWrite(f4,LOW);
+  digitalWrite(f5,LOW);
+  digitalWrite(f6,LOW);
+  digitalWrite(f7,LOW);
+  
+  if (number==0)
+  {
+    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+    digitalWrite(f5,HIGH);
+    digitalWrite(f6,HIGH);
+    //digitalWrite(f7,HIGH);
+  }
+  
+  if (number==1)
+  {
+//    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+//    digitalWrite(f4,HIGH);
+//    digitalWrite(f5,HIGH);
+//    digitalWrite(f6,HIGH);
+//    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==2)
+  {
+    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+//    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+    digitalWrite(f5,HIGH);
+//    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==3)
+  {
+    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+//    digitalWrite(f5,HIGH);
+//    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==4)
+  {
+//    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+//    digitalWrite(f4,HIGH);
+//    digitalWrite(f5,HIGH);
+    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==5)
+  {
+    digitalWrite(f1,HIGH);
+//    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+//    digitalWrite(f5,HIGH);
+    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==6)
+  {
+    digitalWrite(f1,HIGH);
+//    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+    digitalWrite(f5,HIGH);
+    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==7)
+  {
+    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+//    digitalWrite(f4,HIGH);
+//    digitalWrite(f5,HIGH);
+//    digitalWrite(f6,HIGH);
+//    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==8)
+  {
+    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+    digitalWrite(f5,HIGH);
+    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+  if (number==9)
+  {
+    digitalWrite(f1,HIGH);
+    digitalWrite(f2,HIGH);
+    digitalWrite(f3,HIGH);
+    digitalWrite(f4,HIGH);
+//    digitalWrite(f5,HIGH);
+    digitalWrite(f6,HIGH);
+    digitalWrite(f7,HIGH);
+  }
+  
+}
+
 
 void Alarm()
 {
@@ -617,12 +918,3 @@ void Alarm()
   for (int i=15000;i>0;i--)
     tone(buzzer,i+1000,(i*i)+1000);
 }
-
-
-
-
-void Time()
-{
-  //do something!
-}
-
