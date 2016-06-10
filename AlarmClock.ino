@@ -59,12 +59,10 @@ int hh=0;
 int mm=0;
 int ss=0;
 
-int h1=0;
-int h2=0;
-int m1=0;
-int m2=0;
-int s1=0;
-int s2=0;
+int alarmhh=0;
+int alarmmm=0;
+int alarmss=0;
+
 
 
 void setup()
@@ -145,7 +143,7 @@ void loop()
     }
   }
 
-  /*
+  
   hh=Serial.read();
   mm=Serial.read();
   ss=Serial.read();
@@ -177,12 +175,23 @@ void loop()
       }
     }
     hh++;
+    
+    if (alarmhh==hh)
+    {
+      if (alarmmm==mm)
+      {
+        if (alarmss==ss)
+        {
+          Alarm();
+        }
+      }
+    }
     if (hh==12)
     {
       hh=0;
     }
     
-  }*/
+  }
 }
 
 void displayNumberA(int number)
