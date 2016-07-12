@@ -2,8 +2,8 @@
 This code is published in public domain.
 Any part of it or whole code can be edited/removed/modified, but reproducing and publishing it can be done only by providing proper credit to the resource (make-i-stan).
 
-The Sketch is a simple 7-Segment-LED driver using Arduino UNO with direct addressing all LED segments. Each LED display has an enable terminal so each time, on;y one LED dispalys and a number is shown at one display only.
-Since it is targeted for begineers, direct addressing is avoided, and multiplexing logic is emplyed.
+The Sketch is a simple 7-Segment-LED driver using Arduino MEGA with direct addressing to LED segments.
+Since it is targeted for noobs, direct addressing is accompnied to avoid multiplexing logic. ICs for multiplexing can be used with UNO but it makes the circuit too complex.
 Additional feature of this code is to make use of displaying digits on 7-Segment-LED display. So we will add a buzzer and timing mechanism to make Alarm Clock out of it.
 
 Specially prepared for Arduino Nights at Make-i-stan (Pakistan's first and only Makerspace).
