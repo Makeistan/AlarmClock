@@ -33,12 +33,12 @@ const int g=8;                                                                  
 //                                                       'h' don't needs to be get connected since there is no room for a point in Clock display
 const int buzzer = 9;
 
-const int buzzer = 9;
-const int buzzer = 9;
-const int buzzer = 9;
-const int buzzer = 9;
-const int buzzer = 9;
-const int buzzer = 9;
+const int Gh1 = 10;
+const int Gh2 = 11;
+const int Gm1 = 12;
+const int Gm2 = 13;
+const int Gs1 = A0;
+const int Gs2 = A1;
 
 void setup()
 {
@@ -53,6 +53,13 @@ void setup()
   pinMode(g,OUTPUT);
   
   pinMode(buzzer,OUTPUT);
+  
+  pinMode(Gh1,OUTPUT);
+  pinMode(Gh2,OUTPUT);
+  pinMode(Gm1,OUTPUT);
+  pinMode(Gm2,OUTPUT);
+  pinMode(Gs1,OUTPUT);
+  pinMode(Gs2,OUTPUT);
 }
 
 void loop()
@@ -135,6 +142,38 @@ void displayNumber(int number, int serial)
   digitalWrite(f,LOW);
   digitalWrite(g,LOW);
   
+  digitalWrite(Gh1,LOW);
+  digitalWrite(Gh2,LOW);
+  digitalWrite(Gm1,LOW);
+  digitalWrite(Gm2,LOW);
+  digitalWrite(Gs1,LOW);
+  digitalWrite(Gs2,LOW);
+  
+  if (serial==1)
+  {
+    digitalWrite(Gh1,HIGH);
+  }
+  if (serial==2)
+  {
+    digitalWrite(Gh2,HIGH);
+  }
+  if (serial==3)
+  {
+    digitalWrite(Gm1,HIGH);
+  }
+  if (serial==4)
+  {
+    digitalWrite(Gm2,HIGH);
+  }
+  if (serial==5)
+  {
+    digitalWrite(Gs1,HIGH);
+  }
+  if (serial==6)
+  {
+    digitalWrite(Gs2,HIGH);
+  }
+
   if (number==0)
   {
     
