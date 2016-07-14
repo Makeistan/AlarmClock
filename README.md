@@ -21,3 +21,5 @@ For more details, visit www.Make-i-stan.co or www.Facebook.com/Makeistan or www.
 
 #Update:
 Updated version contains code for Countdown Timer, and not for alarm clock. Although it turns ON the alarm, but clock code is modified for the sake of simplicity.
+#Update:
+Back to Basic Time displaying feature, now a new function called displayTime(int minuite, int second) will be displaying time by just passing correct and looped parameters. Alarm, Counter and other features will be available later!
