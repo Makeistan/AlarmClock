@@ -35,13 +35,15 @@ Follow this configuration for making connections in common cathode LED 7-segment
 
 const int buzzer = 9;
 
-const int Gm1 = 10;
-const int Gm2 = 11;
-const int Gs1 = 12;
-const int Gs2 = 13;
+const int m1 = 10;
+const int m2 = 11;
+const int s1 = 12;
+const int s2 = 13;
 
-int mm=0;
-int ss=0;
+int mm=60;
+int ss=60;
+
+unsigned long timer=0;
 
 void setup()
 {
@@ -57,30 +59,40 @@ void setup()
   
   pinMode(buzzer,OUTPUT);
   
-  pinMode(Gm1,OUTPUT);
-  pinMode(Gm2,OUTPUT);
-  pinMode(Gs1,OUTPUT);
-  pinMode(Gs2,OUTPUT);
+  pinMode(m1,OUTPUT);
+  pinMode(m2,OUTPUT);
+  pinMode(s1,OUTPUT);
+  pinMode(s2,OUTPUT);
 }
-
-void loop()
-{
-  //Countdown Timer Code ...
-  for (int i=60;i>=0;i--)
-  {
-    for (int j=60;j>=0;j--)
-    {
+/*
       displayNumber(i/10,1);
       displayNumber(i%10,2);
       displayNumber(j/10,3);
       displayNumber(j%10,4);
-      delay(1000);
+*/
+
+void loop()
+{
+  for (int i=60;i>=0;i--)
+  {
+    for (int j=60;j>=0;j--)
+    {
+      displayTime(i,j);
     }
   }
-  Alarm();
-  
 }
 
+void displayTime(int mm, int ss)
+{
+  timer = millis();
+  while((millis()- timer) <=1000)
+  {
+      displayNumber(mm/10,1);
+      displayNumber(mm%10,2);
+      displayNumber(ss/10,3);
+      displayNumber(ss%10,4);
+  } 
+}
 void displayNumber(int number, int serial)
 {
   digitalWrite(a,LOW);
@@ -91,28 +103,11 @@ void displayNumber(int number, int serial)
   digitalWrite(f,LOW);
   digitalWrite(g,LOW);
   
-  digitalWrite(Gm1,LOW);
-  digitalWrite(Gm2,LOW);
-  digitalWrite(Gs1,LOW);
-  digitalWrite(Gs2,LOW);
+  digitalWrite(m1,HIGH);
+  digitalWrite(m2,HIGH);
+  digitalWrite(s1,HIGH);
+  digitalWrite(s2,HIGH);
   
-  if (serial==1)
-  {
-    digitalWrite(Gm1,HIGH);
-  }
-  if (serial==2)
-  {
-    digitalWrite(Gm2,HIGH);
-  }
-  if (serial==3)
-  {
-    digitalWrite(Gs1,HIGH);
-  }
-  if (serial==4)
-  {
-    digitalWrite(Gs2,HIGH);
-  }
-
   if (number==0)
   {
     
@@ -224,6 +219,23 @@ void displayNumber(int number, int serial)
     digitalWrite(g,HIGH);
   }
   
+  if (serial==1)
+  {
+    digitalWrite(m1,LOW);
+  }
+  if (serial==2)
+  {
+    digitalWrite(m2,LOW);
+  }
+  if (serial==3)
+  {
+    digitalWrite(s1,LOW);
+  }
+  if (serial==4)
+  {
+    digitalWrite(s2,LOW);
+  }
+
 }
 
 void Alarm()
