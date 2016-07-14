@@ -64,6 +64,7 @@ void setup()
   pinMode(s1,OUTPUT);
   pinMode(s2,OUTPUT);
 }
+
 /*
       displayNumber(i/10,1);
       displayNumber(i%10,2);
