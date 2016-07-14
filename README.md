@@ -18,39 +18,6 @@ Specially prepared for Arduino Nights at Make-i-stan (Pakistan's first and only 
 
 For more details, visit www.Make-i-stan.co or www.Facebook.com/Makeistan or www.Twitter.com/Makeistan
 
-g  f  G  a  b
-
-|  |  |  |  |
-
-//////a//////
-
-//         //
-
-f           b
-
-//         //
-
-//////g//////
-
-//         //
-
-e           c
-
-//         //
-
-//////d////// (h)
-
-|  |  |  |  |
-
-e  d  G  c  h
-
-Follow this configuration for making connections in common cathode LED 7-segment displays
-
-'a' through 'g' are 7 segment display LEDs while 'h' is an LED as a point on display.
-
-'G' is used for provide Ground which I am using as Enable here, thus LED will lit only iff I turn G off.
-
-'h' don't needs to be get connected since there is no room for a point in Clock display
 
 #Update:
 Updated version contains code for Countdown Timer, and not for alarm clock. Although it turns ON the alarm, but clock code is modified for the sake of simplicity.
