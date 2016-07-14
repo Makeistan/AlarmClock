@@ -2,25 +2,66 @@
 This code is published in public domain.
 Any part of it or whole code can be edited/removed/modified, but reproducing and publishing it can be done only by providing proper credit to the resource (make-i-stan).
 
-The Sketch is a simple 7-Segment-LED driver using Arduino UNO with direct addressing all LED segments of all displays at the same time (see Fritzing for detail).
-Each LED display has an enable terminal, so each time only one LED dispalys and a number is shown at one display only, keeping others off.
-Since it is targeted for beginners, direct addressing is avoided at each terminal like the previous version, and multiplexing logic is employed.
+The Sketch is a simple 7-Segment-LED driver using Arduino MEGA with direct addressing to LED segments.
+Since it is targeted for noobs, direct addressing is accompnied to avoid multiplexing logic. ICs for multiplexing can be used with UNO but it makes the circuit too complex.
 Additional feature of this code is to make use of displaying digits on 7-Segment-LED display. So we will add a buzzer and timing mechanism to make Alarm Clock out of it.
-In this way, a number displaying circuit can be turned into clock and an alarm eventually.
 
 Specially prepared for Arduino Nights at Make-i-stan (Pakistan's first and only Makerspace).
 For more details, visit www.Make-i-stan.co or www.Facebook.com/Makeistan or www.Twitter.com/Makeistan
 */
 
-const int a=2;                                                                                                          //////a//////
-const int b=3;                                                                                                          //         //
-                                                                                                                        f           b
-const int c=4;                                                                                                          //         //
-const int d=5;                                                                                                          //////g//////
-const int e=6;                                                                                                          //         //
-                                                                                                                        e           c
-const int f=7;                                                                                                          //         //
-const int g=8;                                                                                                          //////d//////
+int a2=10;
+int a3=11;
+
+int b1=22;
+int b2=24;
+int b3=26;
+int b4=28;
+int b5=30;
+int b6=32;
+int b7=34;
+
+int c1=36;
+int c2=38;
+int c3=40;
+int c4=42;
+int c5=44;
+int c6=46;
+int c7=48;
+
+int d1=31;
+int d2=33;
+int d3=35;
+int d4=37;
+int d5=39;
+int d6=41;
+int d7=43;
+
+int e1=45;
+int e2=47;
+int e3=49;
+int e4=51;
+int e5=53;
+int e6=50;
+int e7=52;
+
+int f1=2;
+int f2=3;
+int f3=4;
+int f4=5;
+int f5=6;
+int f6=7;
+int f7=8;
+
+int buzzer=9;
+
+int hh=0;
+int mm=0;
+int ss=0;
+
+int alarmhh=0;
+int alarmmm=0;
+int alarmss=0;
 
 
 
