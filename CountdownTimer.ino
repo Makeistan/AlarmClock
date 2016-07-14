@@ -26,19 +26,22 @@ const int g=8;                                                                  
 //                                                                                           |  |  |  |  |
 //                                                                                           e  d  G  c  h
 
+/*
+Follow this configuration for making connections in common cathode LED 7-segment displays
+'a' through 'g' are 7 segment display LEDs while 'h' is an LED as a point on display.
+'G' is used for provide Ground which I am using as Enable here, thus LED will lit only iff I turn G off.
+'h' don't needs to be get connected since there is no room for a point in Clock display
+*/
 
-//                                                       Follow this configuration for making connections in common cathode LED 7-segment displays
-//                                                         'a' through 'g' are 7 segment display LEDs while 'h' is an LED as a point on display.
-//                                                 'G' is used for provide Ground which I am using as Enable here, thus LED will lit only iff I turn G off.
-//                                                       'h' don't needs to be get connected since there is no room for a point in Clock display
 const int buzzer = 9;
 
-const int Gh1 = 10;
-const int Gh2 = 11;
-const int Gm1 = 12;
-const int Gm2 = 13;
-const int Gs1 = A0;
-const int Gs2 = A1;
+const int Gm1 = 10;
+const int Gm2 = 11;
+const int Gs1 = 12;
+const int Gs2 = 13;
+
+int mm=0;
+int ss=0;
 
 void setup()
 {
@@ -54,8 +57,6 @@ void setup()
   
   pinMode(buzzer,OUTPUT);
   
-  pinMode(Gh1,OUTPUT);
-  pinMode(Gh2,OUTPUT);
   pinMode(Gm1,OUTPUT);
   pinMode(Gm2,OUTPUT);
   pinMode(Gs1,OUTPUT);
@@ -64,72 +65,20 @@ void setup()
 
 void loop()
 {
-  for (int i=0;i<12;i++)
+  //Countdown Timer Code ...
+  for (int i=60;i>=0;i--)
   {
-    displayNumberA(i/10);
-    displayNumberB(i%10);
-    for (int j=0;j<60;j++)
+    for (int j=60;j>=0;j--)
     {
-      displayNumberC(j/10);
-      displayNumberD(j%10);
-      for (int k=0;k<60;k++)
-      {
-        displayNumberE(k/10);
-        displayNumberF(k%10);
-        delay(1000);
-      }
+      displayNumber(i/10,1);
+      displayNumber(i%10,2);
+      displayNumber(j/10,3);
+      displayNumber(j%10,4);
+      delay(1000);
     }
   }
-
-  /*
-  hh=Serial.read();
-  mm=Serial.read();
-  ss=Serial.read();
+  Alarm();
   
-  while(hh<=12)
-  {
-    displayNumberA(hh/10);
-    displayNumberB(hh%10);
-    while (mm<=60)
-    {
-      displayNumberC(mm/10);
-      displayNumberD(mm%10);
-      mm++;
-      while(ss<=60)
-      {
-        displayNumberE(ss/10);
-        displayNumberF(ss%10);
-        ss++;
-        delay(1000);
-        if (ss==60)
-        {
-          ss=0;
-        }
-      }
-      mm++;
-      if (mm==60)
-      {
-        mm=0;
-      }
-    }
-    hh++;
-    
-    if (alarmhh==hh)
-    {
-      if (alarmmm==mm)
-      {
-        if (alarmss==ss)
-        {
-          Alarm();
-        }
-      }
-    }
-    if (hh==12)
-    {
-      hh=0;
-    }
-    
-  }*/
 }
 
 void displayNumber(int number, int serial)
@@ -142,8 +91,6 @@ void displayNumber(int number, int serial)
   digitalWrite(f,LOW);
   digitalWrite(g,LOW);
   
-  digitalWrite(Gh1,LOW);
-  digitalWrite(Gh2,LOW);
   digitalWrite(Gm1,LOW);
   digitalWrite(Gm2,LOW);
   digitalWrite(Gs1,LOW);
@@ -151,25 +98,17 @@ void displayNumber(int number, int serial)
   
   if (serial==1)
   {
-    digitalWrite(Gh1,HIGH);
+    digitalWrite(Gm1,HIGH);
   }
   if (serial==2)
   {
-    digitalWrite(Gh2,HIGH);
+    digitalWrite(Gm2,HIGH);
   }
   if (serial==3)
   {
-    digitalWrite(Gm1,HIGH);
-  }
-  if (serial==4)
-  {
-    digitalWrite(Gm2,HIGH);
-  }
-  if (serial==5)
-  {
     digitalWrite(Gs1,HIGH);
   }
-  if (serial==6)
+  if (serial==4)
   {
     digitalWrite(Gs2,HIGH);
   }
