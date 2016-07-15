@@ -80,6 +80,7 @@ void loop()
     {
       displayTime(i,j);
     }
+    Alarm();
   }
 }
 
