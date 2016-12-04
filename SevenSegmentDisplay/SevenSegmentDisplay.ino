@@ -1,5 +1,5 @@
 /*
-  This code is published in public domain.
+  This code is in public domain.
   Coded by Quswar Mahmood Abid
   www.github.com/Quswar/SevenSegmentDisplay
 */
@@ -41,7 +41,7 @@ void setup()
 
 void loop() 
 {
-  displayNumber(9);
+  displayNumber(8);
 }
 
 
@@ -174,4 +174,3 @@ int  displayNumber(int X)
     }
   }
 }
-
