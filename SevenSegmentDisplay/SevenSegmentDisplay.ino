@@ -22,18 +22,156 @@ const int g=8;                                                                  
 Follow this configuration for making connections in common cathode LED 7-segment displays
 'a' through 'g' are 7 segment display LEDs while 'h' is an LED as a point on display.
 'G' is used for provide Ground which I am using as Enable here, thus LED will lit only iff I turn G off.
-'h' don't needs to be get connected since there is no room for a point in Clock display
+'h' can be connected as per needed.
+'G' depends on the type of LED you are using. Usually it's common cathode. In case of commmon anode, we will provide a HIGH at this point.
 */
 
 
 void setup() 
 {
-  // put your setup code here, to run once:
-
+  pinMode(a,OUTPUT);
+  pinMode(b,OUTPUT);
+  pinMode(c,OUTPUT);
+  pinMode(d,OUTPUT);
+  pinMode(e,OUTPUT);
+  pinMode(f,OUTPUT);
+  pinMode(g,OUTPUT);
+  pinMode(h,OUTPUT);
 }
 
 void loop() 
 {
-  // put your main code here, to run repeatedly:
-
+  displayNumber(9);
 }
+
+
+
+
+int  displayNumber(int X)
+{
+  switch (X)
+  {
+    case 0:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,LOW);
+      digitalWrite(h,LOW);
+    }
+    case 1:
+    {
+      digitalWrite(a,LOW);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      digitalWrite(h,LOW);
+    }
+    case 2:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    case 3:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    case 4:
+    {
+      digitalWrite(a,LOW);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    case 5:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,LOW);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,LOW);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    case 6:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,LOW);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    case 7:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      digitalWrite(h,LOW);
+    }
+    case 8:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    case 9:
+    {
+      digitalWrite(a,HIGH);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,LOW);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      digitalWrite(h,LOW);
+    }
+    default:
+    {
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      digitalWrite(h,LOW);    
+    }
+  }
+}
+
