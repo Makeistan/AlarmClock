@@ -1,22 +1,22 @@
 /*
   This code is in public domain.
   Coded by Quswar Mahmood Abid
-  www.github.com/Quswar/SevenSegmentDisplay
+  https://github.com/Quswar/SevenSegmentDisplay/blob/master/CountdownTimer/CountdownTimer.ino
 */
 
-//                                                                                           g  f  G  a  b
-//                                                                                           |  |  |  |  |
-const int a=2;                                                                               //////a//////
-const int b=3;                                                                               //         //
-//                                                                                           f           b
-const int c=4;                                                                               //         //
-const int d=5;                                                                               //////g//////
-const int e=6;                                                                               //         //
-//                                                                                           e           c
-const int f=7;                                                                               //         //
-const int g=8;                                                                               //////d////// (h)
-//                                                                                           |  |  |  |  |
-//                                                                                           e  d  G  c  h
+//                                                                                           //g  f  G  a  b//
+//                                                                                           //|  |  |  |  |//
+const int a=2;                                                                               ////////a////////
+const int b=3;                                                                               ////         ////
+//                                                                                           //f           b//
+const int c=4;                                                                               ////         ////
+const int d=5;                                                                               ////////g////////
+const int e=6;                                                                               ////         ////
+//                                                                                           //e           c//
+const int f=7;                                                                               ////         ////
+const int g=8;                                                                               ////////d//////(h)
+const int h=9;                                                                               //|  |  |  |  |//
+//                                                                                           //e  d  G  c  h//
 
 /*
 Follow this configuration for making connections in common cathode LED 7-segment displays
@@ -26,6 +26,9 @@ Follow this configuration for making connections in common cathode LED 7-segment
 'G' depends on the type of LED you are using. Usually it's common cathode. In case of commmon anode, we will provide a HIGH at this point.
 */
 
+const int NUMBER = 9;
+long int previous = 0;
+int Number = NUMBER;
 
 void setup() 
 {
@@ -37,11 +40,20 @@ void setup()
   pinMode(f,OUTPUT);
   pinMode(g,OUTPUT);
   pinMode(h,OUTPUT);
+  previous = millis();
 }
 
 void loop() 
 {
-  displayNumber(8);
+  while (millis()-previous!=0)
+  {
+    displayNumber(Number--);
+    if (Number == 0)
+    {
+      Number = NUMBER;
+    }
+    previous=millis();
+  }
 }
 
 

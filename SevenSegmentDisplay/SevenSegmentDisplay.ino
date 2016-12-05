@@ -4,19 +4,20 @@
   www.github.com/Quswar/SevenSegmentDisplay
 */
 
-//                                                                                           g  f  G  a  b
-//                                                                                           |  |  |  |  |
-const int a=2;                                                                               //////a//////
-const int b=3;                                                                               //         //
-//                                                                                           f           b
-const int c=4;                                                                               //         //
-const int d=5;                                                                               //////g//////
-const int e=6;                                                                               //         //
-//                                                                                           e           c
-const int f=7;                                                                               //         //
-const int g=8;                                                                               //////d////// (h)
-//                                                                                           |  |  |  |  |
-//                                                                                           e  d  G  c  h
+
+//                                                                                           //g  f  G  a  b//
+//                                                                                           //|  |  |  |  |//
+const int a=2;                                                                               ////////a////////
+const int b=3;                                                                               ////         ////
+//                                                                                           //f           b//
+const int c=4;                                                                               ////         ////
+const int d=5;                                                                               ////////g////////
+const int e=6;                                                                               ////         ////
+//                                                                                           //e           c//
+const int f=7;                                                                               ////         ////
+const int g=8;                                                                               ////////d//////(h)
+const int h=9;                                                                               //|  |  |  |  |//
+//                                                                                           //e  d  G  c  h//
 
 /*
 Follow this configuration for making connections in common cathode LED 7-segment displays
