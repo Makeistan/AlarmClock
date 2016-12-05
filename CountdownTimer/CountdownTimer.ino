@@ -1,9 +1,8 @@
 /*
   This code is in public domain.
   Coded by Quswar Mahmood Abid
-  www.github.com/Quswar/SevenSegmentDisplay
+  https://github.com/Quswar/SevenSegmentDisplay/blob/master/CountdownTimer/CountdownTimer.ino
 */
-
 
 //                                                                                           //g  f  G  a  b//
 //                                                                                           //|  |  |  |  |//
@@ -27,6 +26,9 @@ Follow this configuration for making connections in common cathode LED 7-segment
 'G' depends on the type of LED you are using. Usually it's common cathode. In case of commmon anode, we will provide a HIGH at this point.
 */
 
+const int NUMBER = 9;
+long int previous = 0;
+int Number = NUMBER;
 
 void setup() 
 {
@@ -38,11 +40,20 @@ void setup()
   pinMode(f,OUTPUT);
   pinMode(g,OUTPUT);
   pinMode(h,OUTPUT);
+  previous = millis();
 }
 
 void loop() 
 {
-  displayNumber(8);
+  while (millis()-previous!=0)
+  {
+    displayNumber(Number--);
+    if (Number == 0)
+    {
+      Number = NUMBER;
+    }
+    previous=millis();
+  }
 }
 
 
